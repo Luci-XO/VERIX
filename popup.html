@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERIX</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 w-96 font-sans">
+
+  <div class="p-4 bg-white shadow-sm border-b border-gray-100 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-teal-600 flex items-center gap-2">
+      <span>🥗</span> VERIX
+    </h1>
+    <button id="history-btn" class="text-xs text-gray-500 hover:text-teal-600 underline">History</button>
+  </div>
+
+  <div class="p-6" id="input-section">
+    <div class="mb-6">
+      <label class="block text-sm font-medium text-gray-700 mb-2">Search Product</label>
+      <input type="text" id="product-input" placeholder="e.g. 1 cup milk, Oreo..." 
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all text-lg">
+    </div>
+
+    <button id="analyze-btn" 
+      class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-colors flex justify-center items-center gap-2 text-md">
+      🔍 Analyze
+    </button>
+  </div>
+
+  <div id="loading" class="hidden p-8 text-center">
+    <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-teal-600 mx-auto mb-4"></div>
+    <p class="text-sm text-gray-500 font-medium">Searching database...</p>
+  </div>
+
+  <div id="history-section" class="hidden p-4 min-h-screen bg-white">
+      <div class="flex justify-between items-center mb-4">
+          <h2 class="text-lg font-bold">Recent Scans</h2>
+          <button id="close-history" class="text-gray-400 hover:text-gray-600 font-bold text-xl">×</button>
+      </div>
+      <div id="history-list" class="space-y-2"></div>
+      <button id="clear-history" class="w-full mt-4 py-2 text-xs text-red-400 hover:text-red-600 border border-red-100 rounded">Clear History</button>
+  </div>
+
+  <div id="results" class="hidden bg-white min-h-screen pb-4">
+    <div class="p-2">
+        <button id="back-btn" class="text-sm text-gray-500 hover:text-teal-600 flex items-center gap-1">← Back to Search</button>
+    </div>
+
+    <div class="px-4">
+        <div class="flex justify-between items-center mb-4">
+            <div>
+                <h2 id="res-name" class="text-lg font-bold">Product Name</h2>
+                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Analysis Result</span>
+            </div>
+            <div id="score-badge" class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white text-lg shadow-md">--</div>
+        </div>
+
+        <div class="mb-4 bg-gray-50 rounded-lg p-3 border border-gray-100">
+            <table class="w-full text-sm text-left">
+                <thead>
+                    <tr class="text-gray-500 border-b border-gray-200">
+                        <th class="pb-1 font-medium">Nutrient</th>
+                        <th class="pb-1 font-medium">Amount</th>
+                        <th class="pb-1 font-medium">Limit</th>
+                    </tr>
+                </thead>
+                <tbody id="comparison-body" class="text-gray-700"></tbody>
+            </table>
+        </div>
+
+        <div class="mb-4">
+            <h3 class="text-sm font-semibold mb-1">Ingredients</h3>
+            <p id="res-ingredients" class="text-xs text-gray-600 leading-relaxed bg-white border border-gray-200 p-2 rounded">--</p>
+        </div>
+
+        <div class="space-y-2">
+            <div id="warnings-container" class="flex flex-wrap gap-2"></div>
+            <div id="benefits-container" class="flex flex-wrap gap-2"></div>
+        </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

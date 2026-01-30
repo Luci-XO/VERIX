@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "VERIX",
+  "version": "1.0",
+  "description": "Instant food analysis and health scanning.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://api.spoonacular.com/*",
+    "https://api.openai.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon28.png"
+    }
+  },
+  "icons": {
+    "128": "icon28.png"
+  }
+}
