@@ -71,4 +71,4 @@ Since VERIX is a client-side Chrome Extension, you do not need to install any de
 
 1. **Clone** this repository.
    ```bash
-   git clone [https://github.com/Luci-XO/VERIX.git](https://github.com/Luci-XO/VERIX.git)
+   git clone https://github.com/Luci-XO/VERIX.git
